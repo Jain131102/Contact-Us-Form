@@ -86,7 +86,7 @@ export default function ContactForm() {
       <div className="bg-slate-100 flex flex-col">
         {error &&
           error.map((e) => (
-            <div
+            <div key={process.env.MONGODB_URL}
               className={`${
                 success ? "text-green-800" : "text-red-600"
               } px-5 py-2`}
