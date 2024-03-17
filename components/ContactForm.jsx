@@ -6,7 +6,7 @@ export default function ContactForm() {
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [error, setError] = useState([]);
+  const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -84,15 +84,15 @@ export default function ContactForm() {
       </form>
 
       <div className="bg-slate-100 flex flex-col">
-        {error &&
-          error.map((e, index) => (
-            <div key={index}
-              className={`${success ? "text-green-800" : "text-red-600"
-              } px-5 py-2`}
-            >
-              {e}
-            </div>
-          ))}
+        {error && (
+          <div
+            className={`${
+              success ? "text-green-800" : "text-red-600"
+            } px-5 py-2`}
+          >
+            {e}
+          </div>
+        )}
       </div>
     </>
   );
