@@ -90,7 +90,7 @@ export default function ContactForm() {
               success ? "text-green-800" : "text-red-600"
             } px-5 py-2`}
           >
-            {e}
+            {error}
           </div>
         )}
       </div>
